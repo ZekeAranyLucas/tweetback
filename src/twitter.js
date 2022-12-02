@@ -3,7 +3,6 @@ const { parseDomain } = require("parse-domain");
 const dataSource = require("./DataSource");
 const metadata = require("../_data/metadata.js");
 const eleventyImg = require("@11ty/eleventy-img");
-const basePath = metadata.basePath || "";
 
 const ELEVENTY_IMG_OPTIONS = {
 	widths: [null],
@@ -11,7 +10,7 @@ const ELEVENTY_IMG_OPTIONS = {
 	// If you don’t want to check this into your git repository (and want to fetch them in your build)
 	// outputDir: "./_site/img/",
 	outputDir: "./img/",
-	urlPath: `${basePath}/img/`,
+	urlPath: "/img/",
 	cacheDuration: "*",
 	filenameFormat: function (id, src, width, format, options) {
 		return `${id}.${format}`;
